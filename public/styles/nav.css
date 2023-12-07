@@ -1,0 +1,21 @@
+nav {
+  height: 120px;
+  width: 100vw;
+  position: fixed; 
+  background-color: #652d6c;
+  color: #FFFFFF;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+
+};
+
+/* .right-align {
+  float: right;
+  
+} */
+
+/* 
+#title-heading {
+  font-family: 'Bungee', sans-serif !important;
+} */
