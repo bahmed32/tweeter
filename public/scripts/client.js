@@ -16,6 +16,12 @@
 
 
 $(document).ready(function() {
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   let maytime = timeago.format('2016-06-12', 'en_US');
   console.log(maytime);
 
@@ -32,7 +38,7 @@ $(document).ready(function() {
       </div>
       <span class="handle">${tweet.user.handle}</span>
     </header>
-    <div class="content">${tweet.content.text}</div>
+    <div class="content">${escape(tweet.content.text)}</div>
     <footer>
       <span class="timestamp">${timeago.format(tweet.created_at)}</span>
       <div class="icons">
@@ -80,6 +86,7 @@ $(document).ready(function() {
     const $submit = $('#tweet');
     $submit.on('click', function(event) {
       event.preventDefault();
+
       const checkTweet = $('#tweet-text').val();
       console.log("check tweet", checkTweet);
       if (!checkTweet || checkTweet.trim() === "") {
@@ -97,9 +104,9 @@ $(document).ready(function() {
           $('#tweet-text').val('');
           loadTweets();
         });
-  
-      });
-      
+
+    });
+
   });
 
 
