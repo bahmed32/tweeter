@@ -18,7 +18,7 @@
 $(document).ready(function() {
   let maytime = timeago.format('2016-06-12', 'en_US');
   console.log(maytime);
-  
+
 
   const createTweetElement = function(tweet) {
     //selct artucle element
@@ -43,7 +43,7 @@ $(document).ready(function() {
     </footer>
   </article>
   `;
- 
+
     return tweetHtml;
 
   };
@@ -62,8 +62,8 @@ $(document).ready(function() {
       const tweetMarkup = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
       $('#tweets-container').prepend(tweetMarkup);
-      }
-    };
+    }
+  };
 
 
 
@@ -85,8 +85,8 @@ $(document).ready(function() {
       if (!checkTweet || checkTweet.trim() === "") {
         alert("Tweet is empty");
         return;
-      } 
-       if (checkTweet.length > 140) {
+      }
+      if (checkTweet.length > 140) {
         alert("Tweet is too long");
         return;
       }
@@ -94,11 +94,12 @@ $(document).ready(function() {
       $.ajax('/tweets', { method: 'POST', data: $('form').serialize() })
         .then(function(indexHtml) {
           console.log("success");
-
+          $('#tweet-text').val('');
           loadTweets();
         });
-    });
-
+  
+      });
+      
   });
 
 
