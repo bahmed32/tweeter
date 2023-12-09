@@ -1,12 +1,13 @@
 
+article.tweet:hover {
+  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+}
 article.tweet {
   border: 1px solid black;
   padding: 20px;
   margin-bottom: 10px;
   margin-top: 20px;
-  box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
 }
-
 article.tweet header {
   display: flex;
   justify-content: space-between;

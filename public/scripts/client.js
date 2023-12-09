@@ -22,7 +22,7 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-  let maytime = timeago.format('2016-06-12', 'en_US');
+  let maytime = timeago.format(Date.now() - 11 * 1000 * 60 * 60);
   console.log(maytime);
 
 
@@ -76,11 +76,12 @@ $(document).ready(function() {
   const loadTweets = function() {
     $.ajax('/tweets', { method: "GET" })
       .then(function(response) {
-        console.log(response);
         renderTweets(response);
       });
   };
   loadTweets();
+
+  // function for 
 
   $(function() {
     const $submit = $('#tweet');
