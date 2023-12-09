@@ -1,18 +1,6 @@
 /*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
+ * Client-side JS 
  */
-//In this exercise we will create a JavaScript function that will generate the DOM structure for a tweet, 
-// given a tweet object. This will give you some experience in creating markup dynamically with libraries like jQuery.
-
-// Within the client.js file, we're going to define a function createTweetElement that takes in a tweet object and is
-// responsible for returning a tweet <article> element containing the entire HTML structure of the tweet.
-
-//input: obj
-//output: html article;
-
-// import { format} from 'timeago.js'
 
 
 $(document).ready(function() {
@@ -22,12 +10,9 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-  let maytime = timeago.format(Date.now() - 11 * 1000 * 60 * 60);
-  console.log(maytime);
 
 
   const createTweetElement = function(tweet) {
-    //selct artucle element
 
     const tweetHtml = `
   <article class="tweet">
@@ -42,27 +27,21 @@ $(document).ready(function() {
     <footer>
       <span class="timestamp">${timeago.format(tweet.created_at)}</span>
       <div class="icons">
-      <i class="fas fa-heart"></i>
-      <i class="fas fa-comment"></i>
-      <i class="fas fa-share"></i>
-    </div>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-comment"></i>
+        <i class="fas fa-share"></i>
+      </div>
     </footer>
   </article>
   `;
 
     return tweetHtml;
-
   };
-
-
-
 
 
   const renderTweets = function(tweets) {
     $('#tweets-container').empty();
     for (const tweet of tweets) {
-
-
 
       // calls createTweetElement for each tweet
       const tweetMarkup = createTweetElement(tweet);
@@ -81,7 +60,7 @@ $(document).ready(function() {
   };
   loadTweets();
 
-  // function for 
+
 
   $(function() {
     const $submit = $('#tweet');
@@ -93,7 +72,6 @@ $(document).ready(function() {
       const checkTweet = $('#tweet-text').val();
    
       if (!checkTweet || checkTweet.trim() === "") {
-        console.log("hello world")
         $errorContainer.text('This Tweet Is Empty').show();
         return;
       }
@@ -106,7 +84,6 @@ $(document).ready(function() {
 
       $.ajax('/tweets', { method: 'POST', data: $('form').serialize() })
         .then(function(indexHtml) {
-          console.log("success");
           $errorContainer.hide();
           $('#tweet-text').val('');
           loadTweets();
@@ -118,5 +95,3 @@ $(document).ready(function() {
 
   });
 
-  //make sure for counter it is .on('input'
-  //us this isteas of $('.new-tweet .error-message');)

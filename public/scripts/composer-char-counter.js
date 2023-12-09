@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("hello from inside element");
+  
 
   $(".new-tweet form textarea").on("input", function() {
     let tweetText = $(this).val();
@@ -19,10 +19,3 @@ $(document).ready(function() {
 
 
 });
-
-
-
-// $(".new-tweet form textarea").on("blur", function() {
-//   console.log("Textarea lost focus");
-// });
-
