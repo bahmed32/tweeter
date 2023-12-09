@@ -3,8 +3,10 @@
 I developed a Twitter clone, implementing a Single Page App (SPA) using a technology stack consisting of HTML, CSS, JavaScript, jQuery, and AJAX. The application features dynamic content rendering, real-time updates for tweet timestamps using the timeago.js library, and seamless interaction with the server for fetching and posting tweets. This project showcases my proficiency in front-end technologies and my ability to create engaging and responsive user interfaces.
 
 ## Final Product
-![Desktop Layout](https://github.com/bahmed32/tweeter/blob/master/docs/DesktopLayout.png)
 ![Tablet Layout](https://github.com/bahmed32/tweeter/blob/master/docs/TabletLayout.png)
+
+
+![Desktop Layout](https://github.com/bahmed32/tweeter/blob/master/docs/DesktopLayout.png)
 
 
 ## Getting Started

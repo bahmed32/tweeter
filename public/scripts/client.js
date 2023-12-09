@@ -11,7 +11,7 @@ $(document).ready(function() {
   };
 
 
-
+// Function/HTML to created tweet element 
   const createTweetElement = function(tweet) {
 
     const tweetHtml = `
@@ -60,7 +60,7 @@ $(document).ready(function() {
   };
   loadTweets();
 
-
+// This function sumbits the tweets & verifys the length of tweets
 
   $(function() {
     const $submit = $('#tweet');
@@ -79,15 +79,17 @@ $(document).ready(function() {
         $errorContainer.text('This Tweet Is Too Long Please Keep It Under 140 Characters. Why? I Don\'t Know ＼( °□° )／ ').show();
         return;
       }
-
+     
   
 
       $.ajax('/tweets', { method: 'POST', data: $('form').serialize() })
         .then(function(indexHtml) {
-          $errorContainer.hide();
           $('#tweet-text').val('');
+          $errorContainer.hide();
           loadTweets();
         });
+
+        $(".counter").text(140)
 
     });
 

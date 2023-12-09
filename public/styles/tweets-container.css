@@ -1,3 +1,6 @@
+/*
+Styling for the posted tweets container
+*/
 
 article.tweet:hover {
   box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);

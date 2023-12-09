@@ -1,3 +1,8 @@
+/*
+Implemented a function to count characters 
+*/
+
+
 $(document).ready(function() {
   
 
