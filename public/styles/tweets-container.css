@@ -57,3 +57,17 @@ article.tweet footer {
 .icons i:hover.fa-share {
   color: #28a745; 
 }
+
+
+
+
+@media only screen and (min-width: 1015px){
+  
+  article.tweet{
+    width: 70%;
+    float: right;
+
+  }
+
+
+}

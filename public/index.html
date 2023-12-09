@@ -31,10 +31,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.full.min.js"
     integrity="sha512-wb3lqal2VtYhmlPAr232VP+Zus676CFAEYdywxIUSxG6F/X9WhN6SpREkWUdwBvMpd6gCKuKTGHhdum6m1wOvQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
   <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/timeAgo.js"></script>
+
 </head>
 
 <body>
@@ -60,8 +62,10 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
+ 
     <!-- <span style="font-family: 'Source Sans 3', sans-serif" ;>Testing</span> -->
     <section class="new-tweet">
+      <div class="error-message" ></div> 
       <h3>Compose Tweet</h3>
       <form action="/tweets" method="POST">
         <label for="tweet-text"></label>
@@ -75,7 +79,5 @@
     <section id="tweets-container"></section>
   </main>
 </body>
-
-
 
 </html>

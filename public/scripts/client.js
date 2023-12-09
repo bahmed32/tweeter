@@ -84,23 +84,29 @@ $(document).ready(function() {
 
   $(function() {
     const $submit = $('#tweet');
+    const $errorContainer = $('.new-tweet .error-message');
+    $errorContainer.hide();
     $submit.on('click', function(event) {
       event.preventDefault();
 
       const checkTweet = $('#tweet-text').val();
-      console.log("check tweet", checkTweet);
+   
       if (!checkTweet || checkTweet.trim() === "") {
-        alert("Tweet is empty");
+        console.log("hello world")
+        $errorContainer.text('This Tweet Is Empty').show();
         return;
       }
       if (checkTweet.length > 140) {
-        alert("Tweet is too long");
+        $errorContainer.text('This Tweet Is Too Long Please Keep It Under 140 Characters. Why? I Don\'t Know ＼( °□° )／ ').show();
         return;
       }
+
+  
 
       $.ajax('/tweets', { method: 'POST', data: $('form').serialize() })
         .then(function(indexHtml) {
           console.log("success");
+          $errorContainer.hide();
           $('#tweet-text').val('');
           loadTweets();
         });
@@ -109,5 +115,7 @@ $(document).ready(function() {
 
   });
 
+  });
 
-});
+  //make sure for counter it is .on('input'
+  //us this isteas of $('.new-tweet .error-message');)
