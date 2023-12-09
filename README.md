@@ -4,6 +4,9 @@ I developed a Twitter clone, implementing a Single Page App (SPA) using a techno
 
 ## Final Product
 ![Desktop Layout](https://github.com/bahmed32/tweeter/blob/master/docs/DesktopLayout.png)
+
+
+
 ![Tablet Layout](https://github.com/bahmed32/tweeter/blob/master/docs/TabletLayout.png)
 
 
